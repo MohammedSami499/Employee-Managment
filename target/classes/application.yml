@@ -1,0 +1,22 @@
+server:
+  port: 8083
+spring:
+  profiles:
+    active: active
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: active
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/employee
+    password: '12345'
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+    database: postgresql
